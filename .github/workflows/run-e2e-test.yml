@@ -30,6 +30,7 @@ jobs:
           cache: "pnpm"
 
       - run: pnpm install
+      - run: pnpm run generate
       - run: pnpm run test:e2e
         env:
           JWT_SECRET: testing
