@@ -20,4 +20,5 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install
+      - run: pnpm run generate
       - run: pnpm run test
