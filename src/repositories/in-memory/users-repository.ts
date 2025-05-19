@@ -1,4 +1,4 @@
-import { Prisma, Role, User } from "@prisma";
+import { Prisma, User } from "@prisma";
 import { UsersRepository } from "@/repositories/users-repository";
 import { randomUUID } from "node:crypto";
 
@@ -11,7 +11,10 @@ export class InMemoryUsersRepository implements UsersRepository {
       name: data.name,
       email: data.email,
       password: data.password,
-      role: data.role ?? Role.MEMBER,
+      whatsapp: data.whatsapp ?? null,
+      address: data.address ?? null,
+      zipcode: data.zipcode ?? null,
+      city: data.city ?? null,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
