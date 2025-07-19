@@ -6,6 +6,10 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3333),
   DATABASE_URL: z.string(),
   JWT_SECRET: z.string(),
+  // Supabase configuration
+  SUPABASE_URL: z.string(),
+  SUPABASE_ANON_KEY: z.string(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
 });
 
 const env = envSchema.safeParse(process.env);

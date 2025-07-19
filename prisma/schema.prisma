@@ -9,6 +9,9 @@ generator client {
   output   = "../generated/prisma"
 }
 
+// Configuração para usar o Supabase PostgreSQL
+// A DATABASE_URL deve apontar para a URL de conexão do Supabase
+// Exemplo: postgresql://postgres:[password]@[host]:[port]/postgres
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -18,11 +21,6 @@ model User {
   id        String   @id @default(uuid())
   name      String
   email     String   @unique
-  password  String
-  whatsapp  String?
-  address   String?
-  zipcode   String?
-  city      String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
